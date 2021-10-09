@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <form [formGroup]="user" class="login-form">
+    <h4 class="login-header">Create your Account</h4>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput type="text" name="username" formControlName="userName" required>
+      <mat-error>username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>User Type</mat-label>
+      <input matInput type="text" name="userType" formControlName="userType" required>
+      <mat-error>userType is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" formControlName="password" required>
+      <mat-error>password is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" name="firstName" formControlName="firstName" required>
+      <mat-error>firstName is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" name="lastname" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" name="email" formControlName="email" required>
+      <mat-error>email is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Phone Number</mat-label>
+      <input matInput type="text" name="phone" formControlName="phone" required>
+      <mat-error>Phone number is required</mat-error>
+    </mat-form-field>
+
+    <button [disabled] = "!user.valid" style="width:100%;" mat-raised-button color="primary" type="submit" (click)="signup()">Submit</button>
+  </form>
+</div>

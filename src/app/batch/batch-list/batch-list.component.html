@@ -1,0 +1,21 @@
+<div *ngIf="isLoading" style="width: 100%;">
+    <img class="loader" src="/assets/loading.gif" alt="">
+</div>
+<div *ngIf="!isLoading" class="wrapper">
+    <div class="desk-view">
+        <mat-grid-list cols="3" rowHeight="2:1" gutterSize="20px">
+            <mat-grid-tile *ngFor="let batch of batch" style="font-size: 22px !important;" (click)="detail(batch.courseName)">
+                {{batch.courseName}}<br>
+                {{batch.time}}<br><br>
+               Starting Date :- {{batch.startingDate}}
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
+    <div class="mob-view">
+        <div class="box" *ngFor="let batch of batch" (click)="detail(batch.courseName)">
+            <h4 style="text-align: center; color: green;">{{batch.courseName}}</h4>
+            <p>{{batch.time}}</p>
+        </div>
+    </div>
+</div>

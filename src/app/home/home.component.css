@@ -1,0 +1,77 @@
+.wrapper
+{
+  width: 100%;
+  margin-top: 10px;
+}
+mat-grid-tile
+{
+  background-color: #eee;
+}
+
+#first
+{
+  background: linear-gradient(to right,royalblue,rgb(14, 185, 207));
+  color: white;
+}
+#second
+{
+  background:linear-gradient(to right,rgb(19, 146, 129), rgb(108, 216, 207));
+  color: white;
+}
+
+#third
+{
+  background:linear-gradient(to right,orange,rgb(231, 224, 129));
+  color:white;
+}
+.table
+{
+  box-shadow: 5px 5px 10px;
+  font-size: 15px;
+}
+
+tr:hover{
+  cursor: pointer;
+  background-color: #eee;
+}
+.table-heading
+{
+  background:linear-gradient(to right,royalblue,rgb(95, 188, 204));
+  color: white;
+}
+
+.student-box
+{
+  background-color: white;
+  padding: 10px;
+}
+
+#piChart
+{
+  height: 100px;
+  width: 100px;
+}
+
+.pay-info
+{
+  position:absolute;
+  width: 100%;
+  bottom: 0px;
+  overflow: hidden;
+  background: linear-gradient(to right,royalblue,rgb(14, 185, 207));
+
+  color: white;
+  padding: 10px;
+}
+
+@media (max-width:700px)
+{
+  h3
+  {
+    font-size: 15px;
+  }
+  p
+  {
+    font-size: 12px;
+  }
+}

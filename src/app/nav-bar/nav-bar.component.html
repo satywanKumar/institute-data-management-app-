@@ -1,0 +1,113 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="    background: linear-gradient(to right,royalblue,rgb(14, 185, 207));color: white;">Menu</mat-toolbar>
+    <mat-nav-list>
+      <div class="logo">
+        <img class="logo-image" src="assets/my logo.png" alt="logo">
+      </div>
+      <button routerLink="/dashboard/home" mat-menu-item>
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+      <!-- batch menu -->
+      <button mat-menu-item [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>menu_book</mat-icon>
+        <span>Batches</span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button routerLink="/dashboard/batch-list" mat-menu-item>
+          <mat-icon>menu</mat-icon>
+          <span>Batch List</span>
+        </button>
+
+        <button routerLink="/dashboard/add-batch" mat-menu-item>
+          <mat-icon>add</mat-icon>
+          <span>Add Batch</span>
+        </button>
+      </mat-menu>
+
+<!-- ------------------------------student menu---------- -->
+      <button routerLink="/dashboard/add-student" mat-menu-item>
+        <mat-icon>person_add</mat-icon>
+        <span>Add Student</span>
+      </button>
+
+      <button routerLink="/dashboard/add-faculty" mat-menu-item>
+        <mat-icon>person_add</mat-icon>
+        <span>Add Faculty</span>
+      </button>
+
+      <button routerLink="/dashboard/faculty" mat-menu-item>
+        <mat-icon>person_add</mat-icon>
+        <span>Faculty List</span>
+      </button>
+
+      <!-- <mat-menu #student="matMenu">
+        <button routerLink="/dashboard/batch-list" mat-menu-item>
+          <mat-icon>group</mat-icon>
+          <span>Student List</span>
+        </button>
+
+        <button routerLink="/dashboard/add-batch" mat-menu-item>
+          <mat-icon>person_add</mat-icon>
+          <span>Add Batch</span>
+        </button>
+      </mat-menu> -->
+  
+
+    <hr>
+
+    <button routerLink="/dashboard/pay-fee" mat-menu-item>
+      <mat-icon>person_add</mat-icon>
+      <span>Pay Fee</span>
+    </button>
+
+    <button routerLink="/dashboard/pay-salary" mat-menu-item>
+      <mat-icon>person_add</mat-icon>
+      <span>Pay Salary</span>
+    </button>
+
+    <button routerLink="/dashboard/payment-history/student" mat-menu-item>
+      <mat-icon>person_add</mat-icon>
+      <span>Student Payment History</span>
+    </button>
+
+    <button routerLink="/dashboard/payment-history/faculty" mat-menu-item>
+      <mat-icon>person_add</mat-icon>
+      <span>Teacher Payment History</span>
+    </button>
+    <br>
+    <hr>
+    <button (click)="logout()" mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>logout</span>
+    </button>
+
+    
+
+    </mat-nav-list>
+
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span><span class="logo">Sri </span>BS Tech</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

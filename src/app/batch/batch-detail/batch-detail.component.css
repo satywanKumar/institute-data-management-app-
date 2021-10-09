@@ -1,0 +1,95 @@
+.wrapper
+{
+    padding: 20px;
+}
+.container-fluid
+{
+    background-color: white;
+    padding: 10px;
+    border-bottom: 5px solid black;
+}
+
+p
+{
+    color:green;
+    font-size: 22px;
+}
+
+.search-box
+{
+    width: 100%;
+    padding: 5px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+table
+{
+    width: 100%;
+}
+.table-heading
+{
+  background:linear-gradient(to right,royalblue,rgb(95, 188, 204));
+  color: white;
+}
+
+tr
+{
+    border-bottom: 1px solid rgb(116, 123, 144);
+}
+th,td
+{
+    padding: 15px;
+}
+
+.student-image
+{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #b6acac, -5px -5px 10px #faf4f4;
+}
+
+.swal-title {
+    margin: 0px;
+    font-size: 16px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+    margin-bottom: 28px;
+  }
+@media (max-width:700px)
+{
+    .wrapper
+    {
+        padding: 5px;
+    }
+    h2
+    {
+        font-size: 20px;
+    }
+    button
+    {
+        font-size: 10px;
+    }
+
+    p
+    {
+        font-size: 12px;
+    }
+    input
+    {
+        font-size: 12px;
+    }
+    table
+    {
+        font-size: 12px;
+        width: 100%;
+        margin:auto;
+    }
+    .container-fluid
+    {
+        padding: 2px;
+    }
+    th,td
+    {
+        padding: 5px;
+    }
+}

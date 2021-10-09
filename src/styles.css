@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+*
+{
+    font-family: cursive;
+}
+html, body { height: 100%; background-color: rgb(177, 176, 182);}
+
+.loader
+{
+  width: 100px;
+  position: absolute;
+  left: 42%;
+  top:40%;
+  
+}
+
+/* .swal-title {
+    margin: 0px;
+    font-size: 15px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+    margin-bottom: 28px;
+  } */
+  .swal-overlay {
+    background-color: rgba(118, 116, 148, 0.863);
+  }
+
+  @media (max-width:700px)
+  {
+    .swal-title,.swal-text {
+        font-size: 15px;
+      }
+
+      .swal-modal {
+        width: 80%;
+      }
+    .swal-button
+    {
+        font-size: 12px;
+        padding: 5px;
+    }
+  }

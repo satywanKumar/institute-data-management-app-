@@ -1,0 +1,64 @@
+<div class="wrapper">
+  <div style="padding:10px">
+    <mat-grid-list cols="3" rowHeight="2:1" gutterSize="20px">
+      <mat-grid-tile id="first">
+        <h3>{{totalStudent}}</h3>
+        <p>Students</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile id="second">
+        <h3>{{totalBatch}}</h3>
+        <p>Batches</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile id="third">
+        <h3>120</h3>
+        <p>Faculty</p>
+      </mat-grid-tile>
+
+
+    </mat-grid-list>
+  </div>
+ <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <table class="table">
+          <tr class="table-heading">
+            <th>Student Image</th>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Phone</th>
+          </tr>
+          <tr *ngFor="let student of studentList">
+            <td><img style="height:50px; border-radius:50%;" [src]="student.imagePath" alt=""></td>
+            <td style="text-transform: capitalize;">{{student.name}}</td>
+            <td>{{student.batch}}</td>
+            <td>{{student.phone}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-sm-4">
+        <div style="width: 400px; height: 400px;">
+          <canvas id="pieChart"></canvas>
+       </div>
+      </div>
+    </div>
+  </div>
+  <div class="pay-info">
+    <div class="row">
+      <div class="col-sm-4">
+        <p>Total Fee Paid : 20000</p>
+      </div>
+
+      <div class="col-sm-4">
+        <p>Paid to Teacher's : 14000</p>
+      </div>
+
+      <div class="col-sm-4">
+        <p>Saving : 6000</p>
+      </div>
+
+    </div>
+  </div>
+</div>

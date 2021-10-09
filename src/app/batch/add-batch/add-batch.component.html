@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <div class="form-box">
+        <h3 style="padding: 10px; text-align: center; background: linear-gradient(to right,royalblue,rgb(14, 185, 207));color: white;">Add New Batch</h3>
+        <form [formGroup]="batch">
+            <mat-form-field>
+                <mat-label>Course name</mat-label>
+                <input matInput type="text" formControlName="courseName" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Discription</mat-label>
+                <textarea matInput type="text" formControlName="discription" required></textarea>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Starting Date</mat-label>
+                <input matInput type="date" formControlName="startingDate" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Duration</mat-label>
+                <input matInput type="number" formControlName="duration" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Time</mat-label>
+                <input matInput type="text" formControlName="time" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Location</mat-label>
+                <input matInput type="text" formControlName="location" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Instructor</mat-label>
+                <input matInput type="text" formControlName="instructor" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <button [disabled] = "!batch.valid" style="width:100%;" mat-raised-button color="primary" type="submit" (click)="save()">Submit</button>
+
+        </form>
+    </div>
+</div>

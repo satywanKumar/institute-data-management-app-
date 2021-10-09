@@ -1,0 +1,88 @@
+<div class="wrapper">
+    <div class="form-box">
+        <h3 style="padding: 10px; text-align: center;     background: linear-gradient(to right,royalblue,rgb(14, 185, 207));color: white;">Add New Student</h3>
+        <form [formGroup]="student">
+            <mat-form-field>
+                <mat-label>Student Name</mat-label>
+                <input matInput type="text" formControlName="name" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Father's Name</mat-label>
+                <input matInput type="text" formControlName="fName" required>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Gender</mat-label>
+                <input matInput type="text" formControlName="gender" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>D.O.B</mat-label>
+                <input matInput type="date" formControlName="dob" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input matInput type="text" formControlName="phone" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+<!-- 
+              <mat-form-field>
+                <mat-label>Full Address</mat-label>
+                <input matInput type="text" formControlName="add" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field> -->
+
+              <mat-form-field>
+                <mat-label>pin</mat-label>
+                <input matInput type="text" formControlName="pin" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>joining Date</mat-label>
+                <input matInput type="date" formControlName="joinDate" required><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Full Address</mat-label>
+                <textarea matInput type="text" formControlName="add" required></textarea><br>
+                <mat-error>this is required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-label>Select Course</mat-label>
+                <mat-select formControlName="batch">
+                  <mat-option *ngFor="let batch of batchList" [value]="batch.courseName">
+                    {{batch.courseName}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Course Fee</mat-label>
+                <input matInput type="number" formControlName="courseFee" required><br>
+                <mat-error>this is required</mat-error>
+            </mat-form-field>
+
+            <input style="display: none;" type="file" #imageSelector (change)="onImageSelected($event)">
+            <button mat-raised-button type="button" (click)="imageSelector.click()">select image</button>
+            <img class="review-image" [src]="imageUrl">
+            <br><br>
+            <button [disabled] = "!student.valid" style="width:100%;" mat-raised-button color="primary" type="submit" (click)="save()">Submit</button>
+
+        </form>
+    </div>
+</div>

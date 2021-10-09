@@ -1,0 +1,20 @@
+<div *ngIf="isLoading" style="width: 100%;">
+  <img class="loader" src="/assets/loading.gif" alt="">
+</div>
+
+<div *ngIf="!isLoading" class="wrapper">
+    <form [formGroup]="user" class="login-form">
+      <h4 class="login-header">Login with your account</h4>
+      <mat-form-field>
+        <mat-label>UserName</mat-label>
+        <input matInput type="text" name="username" formControlName="userName" required>
+        <mat-error>username is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" name="password" formControlName="password" required>
+        <mat-error>password is required</mat-error>
+      </mat-form-field>
+      <button [disabled] = "!user.valid" style="width:100%;" mat-raised-button color="primary" type="submit" (click)="login()">Login</button>
+    </form>
+</div>

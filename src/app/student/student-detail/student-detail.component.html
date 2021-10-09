@@ -1,0 +1,97 @@
+<div class="wrapper">
+    <div class="student-detail">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2">
+            <img class="profile-pic" [src]="student.imagePath">
+          </div>
+          <div class="col-sm-9">
+           <div style="width:100%; margin:auto;">
+            <h1 style="color: royalblue;">{{student.name}} </h1>
+            <p>({{student.batch}})</p>
+           </div>
+          </div>
+          <div class="col-sm-1">
+          </div>
+        </div>
+      </div>
+    
+      <hr>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>father's Name : {{student.fName}}</p>
+                    <p>Gender : {{student.gender}}</p>
+                    <p>D.O.B : {{student.dob}}</p>
+                    <p>Email: {{student.email}}</p>
+                    <p>phone: {{student.phone}}</p>
+                    <p>Address : {{student.add}}</p>
+                    <p>pin : {{student.pin}}</p>
+                </div>
+    
+                <div class="col-sm-6">
+                  
+                    <p>Joining Date : {{student.joinDate}}</p>
+                    <br>
+                    <p style="color: hotpink; font-weight: bold;">Fee Detail</p>
+                    <hr>
+                    <p>Course fee : {{student.courseFee}}</p>
+                    <p>Total Paid : {{totalPaid}}</p>
+                    <p>Dues : {{student.courseFee - totalPaid}}</p>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+      <h4 class="payment-header">Payment History</h4>
+      
+      <mat-form-field  style="width: 100%;">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="phone">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+              <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="amount">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+              <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date and Time</th>
+              <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+        
+            <!-- Color Column -->
+            <ng-container matColumnDef="detail">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Detail </th>
+              <td mat-cell *matCellDef="let element" > {{element.remark}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+        
+  </div>
+
+</div>

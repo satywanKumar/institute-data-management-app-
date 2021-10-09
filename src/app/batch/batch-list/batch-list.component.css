@@ -1,0 +1,49 @@
+.wrapper
+{
+    padding: 15px;
+}
+mat-grid-tile
+{
+    background: linear-gradient(to right,royalblue,rgb(14, 185, 207));
+    color: white;
+}
+
+p{
+    text-align: center;
+}
+mat-grid-tile:hover
+{
+    background-color: hotpink;
+    color: white !important;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.mob-view
+{
+    display: none;
+}
+
+.box
+{
+    width: 100%;
+    padding: 20px;
+    background-color: #eee;
+    margin-bottom: 10px;
+}
+
+.box:hover
+{
+    background-color: hotpink;
+    transition: 0.4s;
+}
+@media(max-width:700px){
+    .mob-view
+    {
+        display: block;
+    }
+    .desk-view
+    {
+        display: none;
+    }
+}
