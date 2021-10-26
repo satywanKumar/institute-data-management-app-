@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class MainServiceService {
 
   constructor(private http:HttpClient) { }
-  baseUrl = "https://myproject-back-api.herokuapp.com/"
+  baseUrl = "api url"
 
   //batch
   
